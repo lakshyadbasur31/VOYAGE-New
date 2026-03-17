@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Guides</title>
+</head>
+<body>
+
+<h1>Guides</h1>
+
+<div th:each="g : ${guides}">
+    <hr>
+    <p><b>Name:</b> <span th:text="${g.name}"></span></p>
+    <p><b>Location:</b> <span th:text="${g.location}"></span></p>
+    <p><b>City:</b> <span th:text="${g.city}"></span></p>
+    <p><b>Language:</b> <span th:text="${g.language}"></span></p>
+    <p><b>Experience:</b> <span th:text="${g.experience}"></span> years</p>
+
+    <p th:if="${g.available}">
+        Status: Available
+        <a th:href="@{'/guides/hire/' + ${g.id}}">Hire</a>
+    </p>
+
+    <p th:if="${!g.available}">
+        Status: Hired <br>
+        Next available:
+        <span th:text="${g.nextAvailableDate}"></span>
+    </p>
+</div>
+
+<hr>
+
+<h2>Add Guide</h2>
+
+<form th:action="@{/guides/add}" method="post" th:object="${guide}">
+    <input type="text" th:field="*{name}" placeholder="Name" required><br>
+    <input type="text" th:field="*{location}" placeholder="Location" required><br>
+    <input type="text" th:field="*{city}" placeholder="City" required><br>
+    <input type="text" th:field="*{language}" placeholder="Language" required><br>
+    <input type="number" th:field="*{experience}" placeholder="Experience" required><br>
+    <button type="submit">Add Guide</button>
+</form>
+
+</body>
+</html>

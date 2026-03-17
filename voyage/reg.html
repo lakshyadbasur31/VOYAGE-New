@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelConnect - Registration</title>
+    <style>
+        /* CSS goes here */
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- Different pages will be rendered here -->
+    </div>
+    <script>
+        /* JavaScript goes here */
+    </script>
+<div class="page active" id="welcome-page">
+    <div class="welcome-container">
+        <div class="hero-section">
+            <h1 class="logo">✈️ TravelConnect</h1>
+            <p class="tagline">Connect with local guides, discover authentic experiences</p>
+        </div>
+        <div class="cta-buttons">
+            <button class="btn btn-primary" onclick="goToSignup()">Sign Up</button>
+            <button class="btn btn-secondary" onclick="goToLogin()">Log In</button>
+        </div>
+    </div>
+</div>
+<div id="step-1">
+    <div class="progress-indicator">
+        <div class="progress-bar" style="width: 33.33%"></div>
+    </div>
+    <h2>Choose Your Role</h2>
+    <p class="step-description">Tell us how you'll be using TravelConnect</p>
+    
+    <div class="user-type-cards">
+        <div class="user-type-card" onclick="selectUserType('traveler')">
+            <div class="card-icon">✈️</div>
+            <h3>I'm a Traveler</h3>
+            <p>Discover authentic experiences and connect with local guides</p>
+        </div>
+        
+        <div class="user-type-card" onclick="selectUserType('guide')">
+            <div class="card-icon">🗺️</div>
+            <h3>I'm a Local Guide</h3>
+            <p>Share your knowledge and earn by helping travelers</p>
+        </div>
+    </div>
+</div>
+<div id="step-2">
+    <div class="progress-indicator">
+        <div class="progress-bar" style="width: 66.66%"></div>
+    </div>
+    <h2>Create Your Account</h2>
+    <p class="step-description">Enter your email and create a secure password</p>
+    
+    <form id="account-form">
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your.email@example.com" 
+                   oninput="validateEmail()" required>
+            <span class="error-message" id="email-error"></span>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-input-wrapper">
+                <input type="password" id="password" placeholder="Create a secure password" 
+                       oninput="validatePassword()" required>
+                <button type="button" class="toggle-password" onclick="togglePassword()">
+                    👁️
+                </button>
+            </div>
+            <div class="password-strength" id="password-strength">
+                <div class="strength-bar">
+                    <div class="strength-fill" id="strength-fill"></div>
+                </div>
+                <span class="strength-text" id="strength-text">Password strength</span>
+            </div>
+            <div class="password-requirements">
+                <div class="requirement" id="req-length">
+                    <span class="check">○</span> At least 8 characters
+                </div>
+                <div class="requirement" id="req-uppercase">
+                    <span class="check">○</span> One uppercase letter
+                </div>
+                <div class="requirement" id="req-number">
+                    <span class="check">○</span> One number
+                </div>
+                <div class="requirement" id="req-special">
+                    <span class="check">○</span> One special character
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-navigation">
+            <button type="button" class="btn btn-secondary" onclick="previousStep()">Back</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep()">Continue</button>
+        </div>
+    </form>
+</div>
+<div id="step-3">
+    <div class="progress-indicator">
+        <div class="progress-bar" style="width: 100%"></div>
+    </div>
+    <h2>Complete Your Profile</h2>
+    <p class="step-description">Add a few more details to get started</p>
+    
+    <form id="profile-form">
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="John Doe" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number (Optional)</label>
+            <div class="phone-input-wrapper">
+                <select id="countryCode" class="country-code">
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+91" selected>🇮🇳 +91</option>
+                    <option value="+86">🇨🇳 +86</option>
+                    <option value="+81">🇯🇵 +81</option>
+                </select>
+                <input type="tel" id="phoneNumber" placeholder="9876543210">
+            </div>
+        </div>
+        
+        <!-- Show only if user type is 'guide' -->
+        <div class="form-group" id="guide-bio-section">
+            <label for="guideDescription">Brief Description</label>
+            <textarea id="guideDescription" rows="3" 
+                      placeholder="Tell travelers about your expertise and what makes you a great guide..."></textarea>
+        </div>
+        
+        <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+                <input type="checkbox" id="termsAgreed" required>
+                <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+            </label>
+        </div>
+        
+        <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+                <input type="checkbox" id="marketingOptIn">
+                <span>Send me travel tips and updates</span>
+            </label>
+        </div>
+        
+        <div class="form-navigation">
+            <button type="button" class="btn btn-secondary" onclick="previousStep()">Back</button>
+            <button type="submit" class="btn btn-primary">Create Account</button>
+        </div>
+    </form>
+</div>
+<div class="page" id="success-page">
+    <div class="success-container">
+        <div class="success-animation">✓</div>
+        <h2>Welcome to TravelConnect!</h2>
+        <p>Hi [User Name], your account has been created successfully.</p>
+        <div class="success-details">
+            <p>Check your email to verify your account</p>
+            <button class="btn btn-text" onclick="resendEmail()">Resend verification email</button>
+        </div>
+        <button class="btn btn-primary" onclick="goToHome()">Continue to Dashboard</button>
+    </div>
+</div>

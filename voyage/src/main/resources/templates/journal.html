@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Voyage Journal</title>
+
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<!-- TOP BAR -->
+<div style="padding:10px;">
+  <button onclick="startCreate()">+ Create Trip</button>
+  <span id="hint" style="margin-left:15px;color:#555;"></span>
+</div>
+
+<!-- MAP -->
+<div id="map"></div>
+<!-- MY TRIPS -->
+<div id="myTrips" style="padding:15px;">
+  <h3>My Trips</h3>
+  <ul id="tripList"></ul>
+</div>
+<!-- GROUP TRIPS -->
+<div id="groupTrips" style="padding:15px;">
+  <h3>Group Trips</h3>
+  <ul id="groupTripList"></ul>
+</div>
+
+<!-- SHARE LINK BOX -->
+<div id="shareBox" style="display:none;padding:15px;border-top:1px solid #ccc;">
+  <b>Share this link with friends:</b><br>
+  <input id="shareLink" style="width:100%" readonly>
+  <button onclick="copyShare()">Copy</button>
+</div>
+
+
+<!-- GALLERY -->
+<div id="gallery" style="padding:15px;"></div>
+
+<!-- MODAL -->
+<div id="tripModal" class="modal">
+  <div class="modal-content">
+    <h3>Create Trip</h3>
+
+    <input id="tripTitle" placeholder="Trip title"><br><br>
+    <input id="memTitle" placeholder="Memory title"><br><br>
+    <textarea id="memDesc" placeholder="Description"></textarea><br><br>
+
+    <label>
+      <input type="checkbox" id="groupTrip"> Group trip
+    </label><br><br>
+
+    <input type="file" id="photo"><br><br>
+
+    <button onclick="saveTrip()">Save</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="/js/journal.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Voyage Planner</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="page">
+  <div class="card planner-card">
+
+    <h2>Hey, where is our next Voyage to? 🌍</h2>
+    <p>Tell me:</p>
+
+    <!-- CHAT BOX -->
+    <div class="chat-box" id="chatBox">
+      <div class="bot-msg">
+        • Destination<br>
+        • Days<br>
+        • Budget<br>
+        • People
+      </div>
+    </div>
+
+    <!-- INPUT -->
+    <div class="chat-input">
+      <input
+        type="text"
+        id="userInput"
+        placeholder="Type your trip here..."
+      />
+      <button class="btn" onclick="sendMessage()">Send</button>
+    </div>
+
+  </div>
+</div>
+
+<script th:src="@{/js/planner.js}"></script>
+</body>
+</html>

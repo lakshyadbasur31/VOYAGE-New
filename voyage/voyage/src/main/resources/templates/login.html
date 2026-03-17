@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<script>
+function login() {
+  const u = document.getElementById("user").value;
+  const p = document.getElementById("pass").value;
+
+  const su = localStorage.getItem("username");
+  const sp = localStorage.getItem("password");
+
+  if (u === su && p === sp) {
+    localStorage.setItem("loggedIn", "true");
+    window.location = "/";
+  } else {
+    alert("Invalid credentials");
+  }
+}
+</script>
+</head>
+<body>
+<h2>Login</h2>
+<input id="user" placeholder="Username"><br>
+<input id="pass" type="password" placeholder="Password"><br>
+<button onclick="login()">Login</button>
+<p>New user? <a href="/register">Register</a></p>
+</body>
+</html>

@@ -1,0 +1,456 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    min-height: 100vh;
+}
+
+.page {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.planner-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+/* CHAT */
+.chat-box {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f8fafc;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.bot-msg,
+.user-msg {
+    max-width: 75%;
+    padding: 10px 14px;
+    margin: 8px 0;
+    border-radius: 12px;
+}
+
+.bot-msg {
+    background: #e0f2fe;
+    color: #1e293b;
+}
+
+.user-msg {
+    background: #00d4ff;
+    color: white;
+    margin-left: auto;
+}
+
+/* INPUT */
+.chat-input {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn {
+    background: #00d4ff;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #00b8d4;
+}
+
+.planner-card ul {
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.planner-card li {
+    list-style: disc;
+    margin: 4px 0;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #0b1c2d;
+  padding: 12px 20px;
+}
+
+.navbar a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+/* MAP */
+#map {
+  width: 100%;
+  height: 350px;   /* THIS IS CRITICAL */
+}
+
+/* CONTENT BELOW MAP */
+.content {
+  padding: 20px 40px;
+}
+
+h3 {
+  margin-top: 30px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+/* MEMORY BLOCK */
+.memory-block {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+#tripList li {
+  padding: 6px;
+  border-bottom: 1px solid #ddd;
+}
+
+#tripList li:hover {
+  background: #f0f0f0;
+}
+/* ==============================
+   LANDING PAGE (SAFE ADD-ON)
+   DOES NOT TOUCH MAP / MODAL
+================================*/
+
+/* NAVBAR */
+.navbar {
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: #2563eb;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #111;
+  margin-left: 25px;
+  font-weight: 500;
+}
+
+.navbar .btn-nav {
+  background: #2563eb;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+/* HERO SECTION */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  padding: 70px 80px;
+  background: #f8fafc;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 44px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.hero p {
+  color: #555;
+  max-width: 420px;
+}
+
+.hero .hero-btn {
+  margin-top: 25px;
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.hero-img {
+  position: relative;
+}
+
+.hero-img img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* DESTINATIONS */
+.destinations {
+  padding: 70px 60px;
+  text-align: center;
+}
+
+.destinations h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.destinations p {
+  color: #666;
+}
+
+.destination-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+}
+
+.destination-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform .25s;
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.destination-card .info {
+  padding: 16px;
+  text-align: left;
+}
+
+.destination-card .info h4 {
+  margin: 0 0 6px;
+}
+
+.destination-card .rating {
+  background: #22c55e;
+  color: white;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  padding: 70px 60px;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.testimonial-row {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.testimonial-row img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: .6;
+}
+
+.testimonial-row img.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* CTA */
+.cta {
+  background: #0f172a;
+  color: white;
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.cta a {
+  display: inline-block;
+  margin-top: 20px;
+  background: #38bdf8;
+  color: #000;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* FUN TRAVEL HERO CARD */
+.hero-card {
+  margin-top: 25px;
+  background: white;
+  padding: 14px;
+  border-radius: 16px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  max-width: 420px;
+}
+
+.hero-card input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.hero-btn {
+  background: #2563eb;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.highlight {
+  background: linear-gradient(90deg,#38bdf8,#2563eb,#9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 4s infinite alternate;
+}
+
+@keyframes glow {
+  from { filter: drop-shadow(0 0 0px #38bdf8); }
+  to   { filter: drop-shadow(0 0 12px #38bdf8); }
+}
+.plane {
+  position: absolute;
+  right: 10%;
+  top: 20%;
+  font-size: 42px;
+  animation: fly 6s ease-in-out infinite;
+}
+
+@keyframes fly {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-25px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+/* ===============================
+   JOURNAL PAGE FIX (OVERRIDE)
+================================*/
+
+body {
+  background: #ffffff !important;
+}
+
+#map {
+  width: 100%;
+  height: 400px !important;
+}
+
+.content {
+  background: white;
+  padding: 20px 40px;
+}
+
+/* Fix navbar for journal */
+.navbar {
+  background: #0b1c2d !important;
+}
+
+.navbar a {
+  color: white !important;
+}
+
+/* Hide old create trip form */
+#oldCreateTrip {
+  display: none !important;
+}
+/* ===== MAP FIX ===== */
+#map {
+  height: 60vh;
+  width: 100%;
+}
+
+/* ===== MODAL FIX ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 320px;
+  border-radius: 8px;
+}

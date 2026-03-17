@@ -1,0 +1,179 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ================= LANDING PAGE ================= */
+
+/* HERO */
+.hero {
+  height: 70vh;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* IMAGE GRID */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.image-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* FEATURES */
+.features {
+  background: #f9f9f9;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* Feature cards ONLY */
+.feature-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-card h3 {
+  color: #ff5e62;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.feature-card a {
+  text-decoration: none;
+  padding: 8px 18px;
+  background: linear-gradient(to right, #ff9966, #ff5e62);
+  color: white;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* ================= APP PAGES (PLANNER / JOURNAL) ================= */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #7dd3fc, #60a5fa);
+}
+
+/* Page wrapper */
+.page {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* App cards (Journal / Planner) */
+.app-card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= CHAT UI ================= */
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-box {
+  height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 10px;
+  background: #f8fafc;
+  margin-bottom: 15px;
+}
+
+.bot-msg,
+.user-msg {
+  max-width: 75%;
+  padding: 10px 14px;
+  margin: 8px 0;
+  border-radius: 12px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.bot-msg {
+  background: #e0f2fe;
+  align-self: flex-start;
+}
+
+.user-msg {
+  background: #6366f1;
+  color: white;
+  align-self: flex-end;
+}
+
+/* ================= INPUT ================= */
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* ================= BUTTON ================= */
+
+.btn {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #4f46e5;
+}
+
+/* ================= ALERT ================= */
+
+.alert {
+  background-color: #4b1c1c;
+  border-left: 4px solid red;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<div class="chat-container">
+
+    <div class="chat-box" id="chatBox">
+
+        <!-- Bot Welcome -->
+        <div class="bot-msg">
+            💰 <b>Budget Planner Activated!</b><br><br>
+            Tell me:
+            <ul>
+                <li>Trip Budget</li>
+                <li>Expense Category</li>
+                <li>Amount Spent</li>
+            </ul>
+        </div>
+
+        <!-- Example Budget Summary -->
+        <div class="bot-msg">
+            📊 <b>Current Trip Budget</b><br>
+            Total Budget: ₹50,000<br>
+            Spent: ₹12,000<br>
+            Remaining: ₹38,000
+        </div>
+
+        <!-- Example Alert -->
+        <div class="bot-msg alert">
+            ⚠ Careful! You're nearing your budget limit.
+        </div>
+
+    </div>
+
+    <!-- Input Section -->
+    <div class="chat-input">
+        <input type="text" placeholder="e.g. Food 500" />
+        <button>Send</button>
+    </div>
+
+</div>
+
+</body>
+</html>

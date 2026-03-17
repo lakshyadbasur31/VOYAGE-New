@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title} ?: 'Voyage'"></title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body>
+
+<!-- Navbar -->
+<div th:replace="fragments/navbar :: body"></div>
+
+<!-- Page content -->
+<main class="page">
+    <div th:replace="${content}"></div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2026 Voyage. Travel smarter.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login | Voyage</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    background: white;
+    padding: 40px;
+    width: 320px;
+    border-radius: 18px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #4A00E0;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #00b4d8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background: #0077b6;
+}
+
+.login-container p {
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.login-container a {
+    color: #4A00E0;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+</style>
+
+<script>
+function login() {
+  const u = document.getElementById("user").value;
+  const p = document.getElementById("pass").value;
+
+  const su = localStorage.getItem("username");
+  const sp = localStorage.getItem("password");
+
+  if (u === su && p === sp) {
+    localStorage.setItem("loggedIn", "true");
+    window.location = "/";
+  } else {
+    alert("Invalid credentials");
+  }
+}
+</script>
+</head>
+
+<body>
+
+<div class="login-container">
+    <h2>🔐 Login</h2>
+
+    <input id="user" placeholder="Username">
+    <input id="pass" type="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <p>New user? <a href="/register">Register</a></p>
+</div>
+
+</body>
+</html>
+

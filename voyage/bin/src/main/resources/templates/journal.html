@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Voyage Journal</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<!-- MAP -->
+<div id="map"></div>
+
+<!-- BOTTOM PANEL (THIS IS THE CREATE TRIP PART) -->
+<div class="trip-panel" style="border:2px solid red">
+    <button onclick="createTrip()" style="font-size:20px">
+        + Create Trip
+    </button>
+
+    <p id="currentTripText">No trip selected</p>
+    <div id="tripList"></div>
+</div>
+<!-- MEMORY MODAL -->
+<div id="memoryModal" class="modal">
+    <div class="modal-content">
+        <h3>Add Memory</h3>
+        <input type="text" id="memoryTitle" placeholder="Title">
+        <textarea id="memoryDesc" placeholder="Description"></textarea>
+        <br>
+        <button onclick="saveMemory()">Save</button>
+        <button onclick="closeModal()">Cancel</button>
+    </div>
+</div>
+
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="/js/journal.js"></script>
+</body>
+</html>

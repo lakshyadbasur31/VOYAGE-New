@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Translator</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div th:replace="~{navbar :: navbar}"></div>
+
+
+<section class="page-hero"
+style="background-image:linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429')">
+  <h1>Quick Translator</h1>
+</section>
+
+<section class="section">
+
+<form method="post" action="/translate">
+  <input name="text" placeholder="Enter text">
+  <button>Translate</button>
+</form>
+
+<p style="text-align:center;" th:text="${result}"></p>
+
+</section>
+</body>
+</html>

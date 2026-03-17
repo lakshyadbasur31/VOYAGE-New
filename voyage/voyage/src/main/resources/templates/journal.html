@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script>
+if (localStorage.getItem("loggedIn") !== "true") {
+  window.location = "login.html";
+}
+</script>
+
+    <title>Voyage | Journal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d2d2d;
+        }
+
+        .journal-box {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .entry-card {
+            background: white;
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .entry-title {
+            font-weight: 600;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .entry-content {
+            color: #555;
+            margin-top: 8px;
+        }
+
+        .no-entry {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div th:replace="fragments/navbar :: navbar"></div>
+
+
+
+<div class="container">
+
+    <h1>📓 My Travel Journal</h1>
+
+    <!-- ADD ENTRY BOX -->
+    <div class="journal-box">
+        <form method="post" action="/journal/add">
+            <label>Title</label>
+            <input type="text" name="title" placeholder="Trip name..." required>
+
+            <label>Content</label>
+            <textarea name="content" placeholder="Write your memories..." required></textarea>
+
+            <button type="submit">Add Entry</button>
+        </form>
+    </div>
+
+    <h2>Previous Entries</h2>
+
+    <!-- NO ENTRIES -->
+    <div th:if="${entries.size() == 0}" class="no-entry">
+        😔 No journal entries yet
+    </div>
+
+    <!-- ENTRIES -->
+    <div th:each="entry : ${entries}" class="entry-card">
+        <div class="entry-title" th:text="${entry.title}"></div>
+        <div class="entry-content" th:text="${entry.content}"></div>
+    </div>
+
+</div>
+</body>
+</html>

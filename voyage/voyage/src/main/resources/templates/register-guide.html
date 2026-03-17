@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Guide</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+   
+
+<div th:replace="~{navbar :: navbar}"></div>
+
+<h2 style="text-align:center;">Guide Registration</h2>
+
+<form method="post" action="/save-guide" style="text-align:center;">
+    <input name="name" placeholder="Name"><br><br>
+    <input name="location" placeholder="Location"><br><br>
+    <input name="languages" placeholder="Languages"><br><br>
+    <input name="price" type="number" placeholder="Price per day"><br><br>
+    <button class="btn" type="submit">Register</button>
+</form>
+
+</body>
+</html>
